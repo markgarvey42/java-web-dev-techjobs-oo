@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+
 import java.util.Objects;
 
 public class Job {
@@ -86,5 +87,40 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+
+    // TODO: Add a custom to string method
+
+    @Override
+    public String toString() {
+
+        if(this.name == null || this.name == "") {
+            name = "Data not available";
+        }
+        if(this.employer.getValue() == null || this.employer.getValue() == "") {
+            employer.setValue("Data not available");
+        }
+        if(this.location.getValue() == null || this.location.getValue() == "") {
+            location.setValue("Data not available");
+        }
+        if(this.positionType.getValue() == null || this.positionType.getValue() == "") {
+            positionType.setValue("Data not available");
+        }
+        if(this.coreCompetency.getValue() == null || this.coreCompetency.getValue() == "") {
+            coreCompetency.setValue("Data not available");
+        }
+
+//        if(this.name == "Data not available" && this.employer.getValue() == "Data not available" && this.positionType.getValue() == "Data not available" && this.location.getValue() == "Data not available" && this.coreCompetency.getValue() == "Data not available") {
+//            return "OOPS! This job does not seem to exist.";
+//        }
+
+        String str = "ID: "+ id +" \n" +
+                "Name: "+ name +" \n" +
+                "Employer: "+ employer +" \n" +
+                "Location: "+ location +" \n" +
+                "Position Type: "+ positionType +"  \n" +
+                "Core Competency: " + coreCompetency +" \n";
+
+        return str;
     }
 }
